@@ -1,7 +1,16 @@
-import React from "react";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { Home } from "./Home";
 
-function App() {
-  return <div className="App">This is plain site.</div>;
-}
+const client = new QueryClient();
+
+const App = () => {
+  return (
+    <QueryClientProvider client={client}>
+      <div className="App">
+        <Home />
+      </div>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
